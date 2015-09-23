@@ -36,7 +36,6 @@ module Phase5
     # { "user" => { "address" => { "street" => "main", "zip" => "89436" } } }
     def parse_www_encoded_form(www_encoded_form)
       return nil if www_encoded_form.nil?
-      puts www_encoded_form
       query = URI::decode_www_form(www_encoded_form)
       query.map do |q|
         if q.first[/\[.*\]/]

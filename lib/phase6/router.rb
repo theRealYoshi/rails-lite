@@ -59,7 +59,7 @@ module Phase6
 
     # should return the route that matches this request
     def match(req)
-      routes = @routes.select { |route| req.path[route.pattern] }
+      routes = @routes.select { |route| route.pattern.match(req.path) }
       return nil if routes.empty?
       routes
     end
@@ -67,7 +67,7 @@ module Phase6
     # either throw 404 or call run on a matched route
     def run(req, res)
       matched_route = match(req)
-      return res.status = 404 if matched_route.empty?
+      return res.status = 404 if matched_route.nil?
       matched_route.first.run(req, res)
     end
   end
