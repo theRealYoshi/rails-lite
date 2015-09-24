@@ -6,5 +6,6 @@ module Phase6
     def invoke_action(action_name)
       self.send action_name
     end
+
   end
 end

@@ -1,5 +1,6 @@
 require_relative '../phase3/controller_base'
 require_relative './session'
+require_relative '../phase7/flash'
 require 'byebug'
 
 module Phase4
